@@ -1,0 +1,3 @@
+{
+   "a5896906128cacc2b065dff345846c819a24985acf6c852c772761f487901e18": "query GetEmployeeDetails {\n  getEmployeeDetails {\n    empid\n    __typename\n  }\n}"
+}

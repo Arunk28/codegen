@@ -1,0 +1,76 @@
+type Query {
+  getEmployeeDetails: [Employees]
+  getFoodDetails: [Food]
+  getpops: [Pop]
+  getinvoice: [Invoice]
+  getorders: [Orders]
+  getcustomers: [Customers]
+  getfoods: [Food]
+  gettables: [Tables]
+}
+
+type Mutation {
+  createEmployee(empid: Int, name: String, salary: Int, joiningdate: String, address: String, designation: String): Employees
+  createCustomer(customerid: Int, name: String, location: String, invoiceid: Int): Customers
+  createInvoice(invoiceid: Int, totalamount: Int, saledate: String): Invoice
+  createFood(fid: Int, name: String, amount: Int, chef: Int): Food
+  createOrder(orderid: Int, customerid: Int, tableid: Int, foodid: Int, orderdate: String, attender: Int, quantity: Int, invoiceid: Int): Orders
+  createTable(reserveid: Int, tablenumber: Int, customerid: Int): Tables
+  createPop(popid: Int, fid: Int, invoiceid: Int, quantity: Int): Pop
+}
+
+type Tables {
+  reserveid: ID!
+  tablenumber: Int
+  customerid: Int
+  customer: Customers
+}
+
+type Employees {
+  empid: ID!
+  name: String
+  salary: Int
+  address: String
+  designation: String
+  createddate: String
+  joiningdate: String
+}
+
+type Food {
+  fid: ID!
+  name: String
+  amount: Int
+  chef: Int
+  employee: Employees
+}
+
+type Pop {
+  popid: ID!
+  food: Food
+  invoice: Invoice
+  quantity: Int
+}
+
+type Invoice {
+  invoiceid: ID!
+  totalamount: Int
+  saledate: String
+  pop: [Pop]
+  order: [Orders]
+  customer: [Customers]
+}
+
+type Orders {
+  orderid: ID!
+  food: Food
+  quantity: Int
+  attender: Employees
+  invoice: Invoice
+}
+
+type Customers {
+  customerid: ID!
+  name: String
+  location: String
+  invoice: Invoice
+}

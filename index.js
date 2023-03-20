@@ -1,0 +1,1 @@
+// ref : https://github.com/valu-digital/graphql-codegen-persisted-query-ids

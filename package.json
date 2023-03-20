@@ -1,0 +1,22 @@
+{
+  "name": "codegen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@graphql-codegen/cli": "^2.13.8",
+    "graphql-code-generator": "^0.18.2",
+    "graphql-codegen": "^0.4.0",
+    "graphql-codegen-persisted-query-ids": "^0.1.2",
+    "graphql-tag": "^2.12.6"
+  },
+  "graphql":{
+    "schema" :"schema.graphql"
+  }
+}
